@@ -445,8 +445,8 @@ function crearPantallaGanar() {
   if (lvl_played == "fácil") { next_lvl = "medio"; }
   else if (lvl_played == "medio") { next_lvl = "dificil"; } // Else abajo (si es dificil)
   const dv_win = `<div class="dv_win">
-                    <h2>Has ganado!!🎉</h2>
-                    <p>Felicidades has superado el nivel ${lvl_played}</p>
+                    <h2>Enhorabuena!!🎉</h2>
+                    <p>Has superado el nivel ${lvl_played}</p>
                     <div class="dv_results"></div>
                     <div class="dv_btns">
                       <button class="btn_play_again">Volver a jugar</button>
