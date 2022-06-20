@@ -203,7 +203,7 @@ function colocarImagen(foto_turno) {
   //console.log(tarjeta_random); // Prueba
 
   if (frente_tarjeta[tarjeta_random].innerHTML == "") {
-    frente_tarjeta[tarjeta_random].innerHTML = `<img src="./img/${foto_turno + 1}.png" class="img_tarjeta">`;
+    frente_tarjeta[tarjeta_random].innerHTML = `<img src="./assets/img/${foto_turno + 1}.png" class="img_tarjeta">`;
   }
   else {
     colocarImagen(foto_turno)
