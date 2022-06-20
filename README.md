@@ -10,11 +10,11 @@
 
 # Vista previa
 <h3>Pantalla inicial</h3>
-<img src="./img/capturas/pantallaInicial_mG.png" />
-<img src="./img/capturas/inicioJuego_mG.png" />
+<img src="./img/capturas/pantallaInicial_mG.png" width="800"/>
+<img src="./img/capturas/inicioJuego_mG.png" width="800"/>
 
 <h3>Responsive</h3>
 <div style="display:flex">
-  <img src="./img/capturas/vistaTablet_mG.png" />
-  <img src="./img/capturas/vistaMovil_mG.png" />
+  <img src="./img/capturas/vistaTablet_mG.png" width="550"/>
+  <img src="./img/capturas/vistaMovil_mG.png" width="300"/>
 </div>
