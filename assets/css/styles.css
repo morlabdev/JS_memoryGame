@@ -18,6 +18,7 @@
 }
 
 body {
+  background: #0dac5d;
   background-color: var(--blue-dark);
   background-image: linear-gradient(172deg, var(--blue-dark) 0%, var(--blue-light) 50%, var(--blue) 100%);
 }
@@ -618,14 +619,14 @@ main {
   width: 70%;
 }
 
-/*.correcta {
+.correcta {
   background-color: #0a7941;
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
-}*/
+}
 
 .tarjeta.correcta::before {
   content: "";

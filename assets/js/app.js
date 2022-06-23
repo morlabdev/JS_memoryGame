@@ -417,7 +417,7 @@ function reiniciar() {
 
 
 //#region Virar las ultimas automaticamented
-/*function virarUltimas() {
+function virarUltimas() {
   const correctas = document.querySelectorAll(".correcta");
   const todas_tarjetas = document.querySelectorAll(".tarjeta");
   //console.log("Hay " + correctas.length + " cartas correctas."); // Prueba
@@ -431,7 +431,7 @@ function reiniciar() {
     });
   }
   //console.log("Funcionando");
-}*/
+}
 //#endregion
 
 
