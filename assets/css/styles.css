@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&family=Space+Mono:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&family=Space+Mono:wght@700&display=swap");
 
 /********** Estilos generales **********/
 
@@ -11,17 +11,15 @@
 
 :root {
   --white: #fafafb;
-  --blue-dark:#070136;
-  --blue-light:#17089f;
-  --blue: #00d9ff;
+  --blue-dark: #0f0c29;
+  --blue-light: #302b63;
+  --blue: #24243e;
   --transparent: rgba(255, 255, 255, 0.2);
-
 }
 
 body {
-  background: var(--blue-dark);
-  background: linear-gradient(to bottom,var(--blue-dark),var(--blue-light), var(--blue));
-  font-size: 18px;
+  background-color: var(--blue-dark);
+  background-image: linear-gradient(172deg, var(--blue-dark) 0%, var(--blue-light) 50%, var(--blue) 100%);
 }
 
 body::-webkit-scrollbar {
@@ -48,7 +46,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--blue-dark);
+  background-color: var(--blue-light);
   padding: 20px;
   position: fixed;
   width: 100%;
@@ -87,11 +85,11 @@ header .dv_logo a:hover {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  transition: all .7s;
-  -webkit-transition: all .7s;
-  -moz-transition: all .7s;
-  -ms-transition: all .7s;
-  -o-transition: all .7s;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
 }
 header .dv_logo a:hover::after {
   content: "Israel Moreno Labrador";
@@ -164,10 +162,11 @@ a.active.msg::before {
 /********** Estilos para el main de la página **********/
 
 main {
-  margin-top: 100px
+  margin-top: 100px;
 }
 
-.sec_win, .sec_change_lvl {
+.sec_win,
+.sec_change_lvl {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -184,7 +183,7 @@ main {
 
 .sec_win .dv_win {
   border: 3px solid #0dac5d;
-  width: 600px;
+  width: 300px;
   background-color: #0a7941;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -195,7 +194,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 20px;
   color: var(--white);
   text-align: center;
   margin: 0 10px;
@@ -203,7 +202,7 @@ main {
 
 .sec_win .dv_lose {
   border: 3px solid #ac0d0d;
-  width: 600px;
+  width: 300px;
   background-color: #790a0a;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -214,7 +213,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 20px;
   color: var(--white);
   text-align: center;
   margin: 0 10px;
@@ -261,7 +260,7 @@ main {
 .question_face {
   font-size: 30px;
   margin-top: 10px;
-  display: block;  
+  display: block;
 }
 
 .sec_win .dv_results {
@@ -291,7 +290,7 @@ main {
 
 .sec_win .dv_btns .btn_play_again,
 .sec_win .dv_btns .btn_play_next {
-  margin-top: 20px;
+  margin-top: 10px;
   border: none;
   outline: none;
   font-size: 16px;
@@ -309,11 +308,11 @@ main {
 .sec_win .dv_btns .btn_play_again:hover,
 .sec_win .dv_btns .btn_play_next:hover {
   background-color: var(--blue);
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-  -ms-transition: .2s;
-  -o-transition: .2s;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
 }
 
 .sec_change_lvl .dv_change_lvl {
@@ -358,11 +357,11 @@ main {
 .sec_change_lvl .dv_btns .btn_confirm:hover,
 .sec_change_lvl .dv_btns .btn_cancel:hover {
   background-color: var(--blue-light);
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-  -ms-transition: .2s;
-  -o-transition: .2s;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
 }
 
 .sec_change_lvl .dv_change_lvl h2 {
@@ -383,9 +382,11 @@ main {
   padding: 10px;
 }
 
+.sec_select_level .dv_levels .btn {
+  width: 130px;
+}
+
 .sec_select_level .dv_levels .btn,
-.dv_btn_pausar_reiniciar .btn_pausar,
-.dv_btn_pausar_reiniciar .btn_reiniciar,
 .dv_inicio_app .dv_container .btn_inicio_rapido {
   border: none;
   outline: none;
@@ -400,20 +401,53 @@ main {
   -o-border-radius: 3px;
   cursor: pointer;
 }
-.sec_select_level .btn:hover,
+
+.dv_btn_pausar_reiniciar {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  gap: 10px;
+}
+
+.dv_btn_pausar_reiniciar .btn_pausar,
+.dv_btn_pausar_reiniciar .btn_reiniciar {
+  background-color: var(--transparent);
+  border: 2px solid var(--white);
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 .dv_btn_pausar_reiniciar .btn_pausar:hover,
-.dv_btn_pausar_reiniciar .btn_reiniciar:hover,
+.dv_btn_pausar_reiniciar .btn_reiniciar:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.sec_select_level .btn:hover,
 .dv_inicio_app .dv_container .btn_inicio_rapido:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
-  transition: transform .5s;
-  -webkit-transition: transform .5s;
-  -moz-transition: transform .5s;
-  -ms-transition: transform .5s;
-  -o-transition: transform .5s;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}
+
+.img_button {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
 
 .sec_select_level .btn:hover::after {
@@ -451,6 +485,7 @@ main {
   margin-top: 20px;
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .sec_game .dv_cards {
@@ -458,12 +493,12 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 600px;
 }
 
 .sec_game .dv_values {
   border-left: 1px solid var(--white);
-  width: 50%;
+  width: 300px;
 }
 
 .valor_contador {
@@ -499,15 +534,6 @@ main {
 }
 .dv_cartas_encontradas .cantidad_cartas_encontradas::before {
   content: "Aciertos: ";
-}
-
-.dv_btn_pausar_reiniciar {
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 10px 30px;
-  gap: 10px;
 }
 
 .fila_tarjetas {
@@ -555,6 +581,10 @@ main {
 .tarjeta::before {
   content: "";
   background-color: #cdcdf3;
+  background-image: url(../img/front_card.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center center;
   color: var(--white);
   position: absolute;
   height: 100%;
@@ -575,8 +605,8 @@ main {
 
 /* Cara de las tarjetas*/
 .frente_tarjeta {
-  width: 70px;
-  height: 80px;
+  width: 90px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -588,14 +618,15 @@ main {
   width: 70%;
 }
 
-.correcta {
+/*.correcta {
   background-color: #0a7941;
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
-}
+}*/
+
 .tarjeta.correcta::before {
   content: "";
   background-image: none;
@@ -605,9 +636,9 @@ main {
 /********** Estilos para el footer **********/
 
 footer {
-  background-color: var(--blue-dark);
+  background-color: var(--blue-light);
   color: var(--white);
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -621,11 +652,11 @@ footer {
 
 .dv_contacts .btn_linkedin:hover {
   background-color: #01679e;
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
@@ -635,11 +666,11 @@ footer {
 
 .dv_contacts .btn_github:hover {
   background-color: #000000;
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
@@ -679,7 +710,7 @@ footer {
   main {
     margin-top: 100px;
   }
-  
+
   .sec_game {
     flex-direction: column-reverse;
   }
@@ -702,6 +733,10 @@ footer {
     margin: 0 20px;
   }
 
+  .frente_tarjeta {
+    width: 70px;
+    height: 80px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -732,20 +767,20 @@ footer {
 
   .active_menu {
     left: 0;
-    transition: .5s all;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    -ms-transition: .5s all;
-    -o-transition: .5s all;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
   }
 
   .inactive_menu {
     left: -100%;
-    transition: .5s all;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    -ms-transition: .5s all;
-    -o-transition: .5s all;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
   }
 
   .dv_btn_menu {
@@ -762,7 +797,7 @@ footer {
   header .dv_logo {
     margin-top: 60px;
   }
-  
+
   header .dv_logo a:hover::after {
     font-size: 20px;
   }
@@ -794,8 +829,8 @@ footer {
   }
 
   .frente_tarjeta {
-    width: 50px;
-    height: 60px;
+    width: 65px;
+    height: 75px;
   }
 
   .dv_btn_pausar_reiniciar {
@@ -808,7 +843,7 @@ footer {
     /*flex-direction: column;*/
     gap: 10px;
   }
-  
+
   .sec_select_level .dv_levels .btn {
     width: 70%;
   }
@@ -830,7 +865,7 @@ footer {
   .valor_tiempo {
     font-size: 18px;
   }
-  
+
   .cantidad_cartas_encontradas {
     font-size: 18px;
   }
@@ -850,7 +885,7 @@ footer {
   .sec_win .dv_btns .btn_play_again,
   .sec_win .dv_btns .btn_play_next {
     display: block;
-    margin: 10px auto;   
+    margin: 10px auto;
   }
 
   .sec_change_lvl .dv_change_lvl {
@@ -860,7 +895,12 @@ footer {
   .sec_change_lvl .dv_btns .btn_confirm,
   .sec_change_lvl .dv_btns .btn_cancel {
     display: block;
-    margin: 10px auto;  
+    margin: 10px auto;
+  }
+
+  .frente_tarjeta {
+    width: 55px;
+    height: 65px;
   }
 }
 
@@ -879,7 +919,7 @@ footer {
   .dv_inicio_app .dv_container .dv_pregunta_inicio {
     font-size: 18px;
   }
-  
+
   .logo_inicio {
     font-size: 35px;
   }
@@ -894,7 +934,7 @@ footer {
   .valor_tiempo {
     padding: 5px 0px;
   }
-  
+
   .cantidad_cartas_encontradas {
     padding: 5px 0px;
   }
@@ -909,5 +949,10 @@ footer {
 
   .sec_change_lvl .dv_change_lvl h2 {
     font-size: 16px;
+  }
+
+  .frente_tarjeta {
+    width: 40px;
+    height: 50px;
   }
 }

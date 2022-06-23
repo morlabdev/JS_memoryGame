@@ -1,6 +1,6 @@
 let playing = false, can_play = false, is_pause = false;
 let movimientos = 0, clicks = 0, cartas_encontradas = 0;
-let minutos = 1, mins = 0, segs = 0, segundos = 60;
+let minutos = 1, segundos = 45;
 let lvl_played = null, next_lvl = null, lvl_toChange = null;
 
 const header = document.querySelector("header");
@@ -272,7 +272,7 @@ function crearTiempo() {
   dv_tiempo.appendChild(valor_tiempo);
   dv_values.appendChild(dv_tiempo);
 
-  valor_tiempo.innerHTML = "0" + minutos + ":" + "0" + segs;
+  valor_tiempo.innerHTML = "00:" + segundos;
 
   // Atrasar el inicio del tiempo a que inicie cuando se volteen las cartas (2 segundos)
   setTimeout(() => {
@@ -284,13 +284,11 @@ function funcionTiempo() {
   const valor_tiempo = document.querySelector(".valor_tiempo");
   segundos--;
 
-    if (segundos < 10) {
-      segs = "0" + segundos;
-    } else { 
-      segs = segundos; 
+  if (segundos < 10) {
+      segundos = "0" + segundos;
     }
     
-    valor_tiempo.innerHTML = "0" + mins + ":" + segs;
+    valor_tiempo.innerHTML = "00:" + segundos;
     
     // Evitar trampas (no seleccionar las cartas)
     document.querySelectorAll(".tarjeta").forEach(tarjeta => {
@@ -354,11 +352,11 @@ function crearBtnPausarReiniciar() {
 
   const btn_pausar = document.createElement("button");
   btn_pausar.setAttribute("class", "btn_pausar");
-  btn_pausar.textContent = "Pausar";
+  btn_pausar.innerHTML = `<img src="./assets/img/pause.png" class="img_button">`;
 
   const btn_reiniciar = document.createElement("button");
   btn_reiniciar.setAttribute("class", "btn_reiniciar");
-  btn_reiniciar.textContent = "Reiniciar";
+  btn_reiniciar.innerHTML = `<img src="./assets/img/replay.png" class="img_button">`;
 
   dv_btn_pausar_reiniciar.appendChild(btn_pausar);
   dv_btn_pausar_reiniciar.appendChild(btn_reiniciar);
@@ -373,12 +371,12 @@ function pausar() {
   const btn_pausar = document.querySelector(".btn_pausar");
   if (!is_pause) {
     is_pause = true;
-    btn_pausar.textContent = "Continuar";
+    btn_pausar.innerHTML = `<img src="./assets/img/play.png" class="img_button">`;
     clearInterval(interval);
   }
   else {
     is_pause = false;
-    btn_pausar.textContent = "Pausar";
+    btn_pausar.innerHTML = `<img src="./assets/img/pause.png" class="img_button">`;
     interval = setInterval(funcionTiempo, 1000);
   }
   can_play = !is_pause;
@@ -391,8 +389,7 @@ function reiniciar() {
   });
 
   clicks = 0;
-  minutos = 1;
-  segundos = 60;
+  segundos = 45;
   movimientos = -1;
   
   actualizarMovimientos();
@@ -420,7 +417,7 @@ function reiniciar() {
 
 
 //#region Virar las ultimas automaticamented
-function virarUltimas() {
+/*function virarUltimas() {
   const correctas = document.querySelectorAll(".correcta");
   const todas_tarjetas = document.querySelectorAll(".tarjeta");
   //console.log("Hay " + correctas.length + " cartas correctas."); // Prueba
@@ -434,7 +431,7 @@ function virarUltimas() {
     });
   }
   //console.log("Funcionando");
-}
+}*/
 //#endregion
 
 
@@ -445,12 +442,12 @@ function crearPantallaGanar() {
   if (lvl_played == "fácil") { next_lvl = "medio"; }
   else if (lvl_played == "medio") { next_lvl = "dificil"; } // Else abajo (si es dificil)
   const dv_win = `<div class="dv_win">
-                    <h2>Enhorabuena!!🎉</h2>
-                    <p>Has superado el nivel ${lvl_played}</p>
+                    <h2>Enhorabuena!!</h2>
+                    <p>Nivel ${lvl_played} superado 🎉</p>
                     <div class="dv_results"></div>
                     <div class="dv_btns">
-                      <button class="btn_play_again">Volver a jugar</button>
-                      <button class="btn_play_next">Jugar nivel ${next_lvl}</button>
+                      <button class="btn_play_again">Reiniciar</button>
+                      <button class="btn_play_next">Subir nivel</button>
                     </div>
                   </div>`;
   sec_win.innerHTML = dv_win;
@@ -470,8 +467,7 @@ function crearPantallaGanar() {
 
 function mostrarResultados() {
   const dv_results = document.querySelector(".dv_results");
-  const p_result = `<h2>Resultados</h2>
-                    <p>Nivel superado: ${lvl_played}<br/>Movimientos realizados: ${movimientos}<br/>Tiempo de juego: ${mins + ":" + segs}`;
+  const p_result = `Movimientos: ${movimientos}<br/>Tiempo restante: 00:${segundos}`;
   dv_results.innerHTML = p_result;
 }
 //#endregion
@@ -545,7 +541,7 @@ function senalRetirarPartida() {
 //#region Funcion para cuando se pierde
 function funcionPerder() {
   const dv_lose = `<div class="dv_lose">
-                    <h2>Se acabó el tiempo</h2>
+                    <h2>Game Over</h2>
                     <h2>😥</h2>
                     <div class="dv_btns">
                       <button class="btn_play_again">Volver a jugar</button>
