@@ -2,7 +2,7 @@
 
 <div>
   <h3>
-    <a href="https://morlabdev.github.io/memoryGame_JS/" target="_blank">Probar juego</a>
+    <a href="https://morlabdev.github.io/JS_memoryGame/" target="_blank">Probar juego</a>
     <span> | </span>
     <a href="https://www.linkedin.com/in/israelmorenolabrador/"  target="_blank">Feedback</a>
   </h3>
