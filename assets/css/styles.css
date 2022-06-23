@@ -18,7 +18,6 @@
 }
 
 body {
-  background: #0dac5d;
   background-color: var(--blue-dark);
   background-image: linear-gradient(172deg, var(--blue-dark) 0%, var(--blue-light) 50%, var(--blue) 100%);
 }
